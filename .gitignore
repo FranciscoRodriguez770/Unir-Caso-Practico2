@@ -10,9 +10,11 @@
 *.userosscache
 *.sln.docstates
 main.tf
-.ssh
+.ssh 
+*.exe
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+terraform/.terraform
 
 # Mono auto generated files
 mono_crash.*
