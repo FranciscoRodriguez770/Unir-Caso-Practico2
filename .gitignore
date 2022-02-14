@@ -15,6 +15,7 @@ main.tf
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 Terraform/.terraform 
+Terraform/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.46.1/windows_amd64/terraform-provider-azurerm_v2.46.1_x5.exe
 # Mono auto generated files
 mono_crash.*
 
