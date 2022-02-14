@@ -14,8 +14,7 @@ main.tf
 *.exe
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-terraform/.terraform
-
+Terraform/.terraform 
 # Mono auto generated files
 mono_crash.*
 
