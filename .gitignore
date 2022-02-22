@@ -4,7 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # User-specific files
-main.tf
+credentials.tf
 Terraform/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.46.1/windows_amd64/terraform-provider-azurerm_v2.46.1_x5.exe
 #Folders
 .ssh 
