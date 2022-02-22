@@ -9,5 +9,8 @@ Terraform/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.46.1/wi
 #Folders
 .ssh 
 *.exe
+*.tfstate
+salida.txt
+*.hcl
 Terraform/.terraform 
 
