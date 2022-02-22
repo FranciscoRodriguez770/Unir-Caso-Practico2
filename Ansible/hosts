@@ -1,5 +1,5 @@
 [all:vars]
-ansible_user=root
+ansible_user=ansible
 
 [k8Master]
 20.61.205.193
