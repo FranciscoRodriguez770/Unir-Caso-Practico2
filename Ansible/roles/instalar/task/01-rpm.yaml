@@ -1,0 +1,4 @@
+name: instalar paquetes rpm
+dnf:
+  name: 'net-tools'
+  state: present
