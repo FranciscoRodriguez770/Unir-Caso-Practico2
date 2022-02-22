@@ -1,5 +1,8 @@
-name: instalar paquetes
-host: nfs
-gather_facts: false
-roles:
-  - instalar
+---
+
+-name: instalar paquetes
+  host: nfs
+  gather_facts: false
+  roles:
+   - instalar
+   
