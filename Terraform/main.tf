@@ -10,7 +10,7 @@ terraform {
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
 
 resource "azurerm_resource_group" "rg" {
-    name     =  "kubernetes_rg"
+    name     =  "rggroupcp2fr770"
     location = var.location
 
     tags = {
@@ -21,7 +21,7 @@ resource "azurerm_resource_group" "rg" {
 # Storage account
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account
 
-resource "azurerm_storage_account" "stAccountfr770" {
+resource "azurerm_storage_account" "stAccount" {
     name                     = "staccountcp2fr770" 
     resource_group_name      = azurerm_resource_group.rg.name
     location                 = azurerm_resource_group.rg.location
@@ -31,6 +31,5 @@ resource "azurerm_storage_account" "stAccountfr770" {
     tags = {
         environment = "CP2"
     }
-
 }
 
