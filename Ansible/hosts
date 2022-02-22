@@ -11,5 +11,4 @@ ansible_user=adminusername
 [nfs]
 20.61.201.143
 
-[client]
-192.168.1.110
+
