@@ -1,0 +1,4 @@
+---
+
+- include_tasks: 01-instalar_repo_k8s.yaml
+

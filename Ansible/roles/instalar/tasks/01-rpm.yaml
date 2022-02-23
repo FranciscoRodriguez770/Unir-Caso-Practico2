@@ -1,6 +1,8 @@
+---
+
 - name: instalar paquetes rpm
-dnf:
-  name: "{{rpms}}"
-  state: present
+  dnf:
+   name: "{{ rpms }}"
+   state: present
   become: true
   
