@@ -1,4 +1,5 @@
 name: instalar paquetes rpm
 dnf:
-  name: 'net-tools'
+  name: "{{rpms}}"
   state: present
+  become: true
