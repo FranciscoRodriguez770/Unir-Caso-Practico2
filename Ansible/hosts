@@ -1,14 +1,13 @@
 [all:vars]
 ansible_user=adminUsername
 
-[k8Master]
+[k8smaster]
 20.61.205.193
 
-[k8Workers]
+[k8sworkers]
 20.61.205.150
 20.61.201.152
 
 [nfs]
 20.61.201.143
-
 
