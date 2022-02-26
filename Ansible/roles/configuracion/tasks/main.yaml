@@ -1,5 +1,7 @@
 ---
 
-- include_tasks: 01-actualizar_dnf.yaml
+#- include_tasks: 01-actualizar-dnf.yaml
+- include_tasks: 02-cambio-zona-horaria.yaml
+
 
 
