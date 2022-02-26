@@ -1,10 +1,11 @@
 ---
 
-- name: instalar paquetes
+- name: configuracion inicial
   hosts: all
   vars_files:
     - "group_vars/instalar.yaml"
   gather_facts: false
   roles:
-    - instalar
+    - configuracion
+
 
