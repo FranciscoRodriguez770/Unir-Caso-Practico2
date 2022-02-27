@@ -1,0 +1,5 @@
+---
+
+zonahoraria: Europe/London
+rpms_nfs: ['nfs-utils','nfs4-acl-tools','wget']
+

@@ -13,3 +13,8 @@
 
 - name: Permitir acceso ntp
   shell: firewall-cmd --add-service=ntp --permanent 
+
+- name: cambiar zona horaria
+  shell: timedatectl set-timezone "{{ zonahoraria }}"
+
+
