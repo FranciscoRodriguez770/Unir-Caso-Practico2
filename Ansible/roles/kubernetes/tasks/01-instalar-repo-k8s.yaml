@@ -1,9 +1,0 @@
----
-
-- name: instalar repo K8s
-  hosts: all
-  gather_facts: false
-  roles:
-    - configuracion
-
-
