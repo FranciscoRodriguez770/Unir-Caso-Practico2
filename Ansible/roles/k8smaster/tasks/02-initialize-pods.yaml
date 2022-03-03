@@ -1,0 +1,29 @@
+---
+
+- name: Borrar pods anteriores
+  shell: kubeadm reset -f
+
+- name: Crear red 
+  shell: kubeadm init --pod-network-cidr 192.169.0.0/16
+
+- name: almacenar token en una variable
+  command: kubeadm token create --print-join-command
+  register: token_join
+
+- name: mostrar token
+  debug:
+   var: token_join.stdout_lines
+
+- name: export kubeconfig
+  shell: export KUBECONFIG=/etc/kubernetes/admin.conf
+ 
+- name: Crear carpeta .kube
+  ansible.builtin.file:
+    path: /root/.kube
+    state: directory
+    mode: '0755'
+    recurse: yes
+
+- name: copiar fichero admin.conf
+  command: cp -i /etc/kubernetes/admin.conf /root/.kube/config
+
