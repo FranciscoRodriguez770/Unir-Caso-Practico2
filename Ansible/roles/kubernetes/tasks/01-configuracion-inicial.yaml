@@ -13,7 +13,5 @@
   shell: sysctl --system
 
 - name: disable swap
-  shell: |
-    swapoff -a
-    sed -i '/ swap / s/^\(.*\)$/#\1/g' -etc/fstab
+  shell: swapoff -a | sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 

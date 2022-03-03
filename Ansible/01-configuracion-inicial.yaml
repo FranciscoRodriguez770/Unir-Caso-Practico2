@@ -1,11 +1,13 @@
 ---
 
-- name: Activar transparent masquerade
-  shell: modprobe br_netfilter
+- name: configuracion comun a todos
+  hosts: all
+  vars_files:
+    - "group_vars/variables.yaml"
+  gather_facts: true
+  become: true
+  roles:
+    - configuracion
 
-- name: agregar a firewall
-  shell: firewall-cmd --add-masquerade --permanent
 
-- name: recargar firewall
-  shell: firewall-cmd --reload
- 
+
