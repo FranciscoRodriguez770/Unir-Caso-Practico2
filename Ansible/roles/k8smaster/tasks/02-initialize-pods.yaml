@@ -6,14 +6,6 @@
 - name: Crear red 
   shell: kubeadm init --pod-network-cidr 192.169.0.0/16
 
-- name: almacenar token en una variable
-  command: kubeadm token create --print-join-command
-  register: token_join
-
-- name: mostrar token
-  debug:
-   var: token_join.stdout_lines
-
 - name: export kubeconfig
   shell: export KUBECONFIG=/etc/kubernetes/admin.conf
  
@@ -21,9 +13,17 @@
   ansible.builtin.file:
     path: /root/.kube
     state: directory
-    mode: '0755'
+    mode: u=rw,g=r,o=r
     recurse: yes
 
 - name: copiar fichero admin.conf
-  command: cp -i /etc/kubernetes/admin.conf /root/.kube/config
+  shell: cp -i /etc/kubernetes/admin.conf /root/.kube/config
 
+- name: almacenar en una variable el join
+  command: kubeadm token create --print-join-command
+  register: token_join
+
+- name: guardar join en fichero
+  local_action: copy content="{{ token_join.stdout }}" dest=files/join_nodes.sh
+
+ 
