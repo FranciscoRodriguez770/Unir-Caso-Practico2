@@ -17,11 +17,24 @@ resource "azurerm_network_security_group" "mySecGroup" {
         source_address_prefix      = "*"
         destination_address_prefix = "*"
     }
+    security_rule {
+        name                       = "Jenkins"
+        priority                   = 1002
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        source_port_range          = "*"
+        destination_port_range     = "32000"
+        source_address_prefix      = "*"
+        destination_address_prefix = "*"
+    }
 
     tags = {
         environment = "CP2"
     }
 }
+
+
 
 # Vinculamos el security group al interface de red
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface_security_group_association
@@ -29,5 +42,5 @@ resource "azurerm_network_security_group" "mySecGroup" {
 resource "azurerm_network_interface_security_group_association" "mySecGroupAssociation1" {
     network_interface_id      = azurerm_network_interface.myNic1[count.index].id
     network_security_group_id = azurerm_network_security_group.mySecGroup.id
-    count = length(var.maquinas)
+    count = length(var.workers) + 1
 }
